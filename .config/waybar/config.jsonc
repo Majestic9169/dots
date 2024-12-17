@@ -14,8 +14,7 @@
         "hyprland/workspaces"
     ],
     "modules-center": [
-        "clock",
-        "custom/todo"
+        "clock"
         // "custom/weather"
     ],
     "modules-right": [
@@ -31,12 +30,6 @@
         "battery",
     ],
     // sourced from modules based on config.ctl //
-    "custom/todo": {
-        "format": " ",
-        "tooltip": true,
-        "tooltip-format": "todo list",
-        "on-click": "kitty --execute dooit"
-    },
     "custom/wofi": {
         "format": "󰣇",
         "tooltip": false,
