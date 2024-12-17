@@ -1,0 +1,218 @@
+{
+    // sourced from header module //
+    "reload_style_on_change": true,
+    "layer": "top",
+    "position": "top",
+    "mod": "dock",
+    "height": 31,
+    "exclusive": true,
+    "passthrough": false,
+    "gtk-layer-shell": true,
+    // positions generated based on config.ctl //
+    "modules-left": [
+        "custom/wofi",
+        "hyprland/workspaces"
+    ],
+    "modules-center": [
+        "clock",
+        "custom/todo"
+        // "custom/weather"
+    ],
+    "modules-right": [
+        "tray",
+        "pulseaudio",
+        "backlight",
+        "custom/wallpaper",
+        "custom/keybindhint",
+        "cpu",
+        "memory",
+        "temperature",
+        "network",
+        "battery",
+    ],
+    // sourced from modules based on config.ctl //
+    "custom/todo": {
+        "format": " ",
+        "tooltip": true,
+        "tooltip-format": "todo list",
+        "on-click": "kitty --execute dooit"
+    },
+    "custom/wofi": {
+        "format": "󰣇",
+        "tooltip": false,
+        "on-click-right": "lxappearance",
+        // "on-click": "pkill -9 wofi || wofi --show drun",
+        "on-click": "pkill -9 rofi || rofi -show drun",
+        "on-click-middle": "pkill -9 rofi"
+    },
+    "temperature": {
+    // "thermal-zone": 2,
+    // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+    "critical-threshold": 80,
+    "format-critical": "{temperatureC}°C ",
+    "format": "{temperatureC}°C "
+    },
+    "custom/weather": {
+        "format": "{}",
+        "tooltip": true,
+        "interval": 3600,
+        "exec": "wttrbar --custom-indicator '{ICON}\n<b>{temp_C}</b>' --location hyderabad",
+        "return-type": "json"
+    },
+    "cpu": {
+        "interval": 5,
+        "format": "  {usage}%",
+        "tooltip": false
+    },
+    "memory": {
+        "interval": 1,
+        "states": {
+            "good": 0,
+            "okay": 60,
+            "high": 90
+        },
+        "format": "  {}% "
+    },
+    "clock": {
+        "interval": 1,
+        "locale": "C",
+        "format": "{:%I:%M.%S %p}",
+        "rotate": 0,
+        "format-alt": "{:%I:%M.%S %p  󰃭  %d·%m·%y}",
+        "tooltip-format": "<tt>{calendar}</tt>",
+        "calendar": {
+            "mode": "month",
+            "mode-mon-col": 3,
+            "on-scroll": 1,
+            "on-click-right": "mode",
+            "format": {
+                "months": "<span color='#ffead3'><b>{}</b></span>",
+                "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+                "today": "<span color='#ff6699'><b>{}</b></span>"
+            }
+        },
+        "actions": {
+            "on-click-right": "mode",
+            "on-click-forward": "tz_up",
+            "on-click-backward": "tz_down",
+            "on-scroll-up": "shift_up",
+            "on-scroll-down": "shift_down"
+        }
+    },
+    "battery": {
+        "interval": 10,
+        "states": {
+            "good": 95,
+            "warning": 70,
+            "critical": 50
+        },
+        "format": "{icon} {capacity}%",
+        "rotate": 0,
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-alt": "{time} {icon}",
+        "format-icons": [
+            "󰂎",
+            "󰁺",
+            "󰁻",
+            "󰁼",
+            "󰁽",
+            "󰁾",
+            "󰁿",
+            "󰂀",
+            "󰂁",
+            "󰂂",
+            "󰁹"
+        ]
+    },
+    "hyprland/workspaces": {
+        "all-outputs": true,
+        "format": "{icon}",
+        "format-icons": {
+            "1": "一",
+            "2": "二",
+            "3": "三",
+            "4": "四",
+            "5": "五",
+            "6": "六",
+            "7": "七",
+            "8": "八",
+            "9": "九",
+            "10": "十"
+        },
+        "on-scroll-up": "hyprctl dispatch workspace e+1 1>/dev/null",
+        "on-scroll-down": "hyprctl dispatch workspace e-1 1>/dev/null",
+        "sort-by-number": true,
+        "active-only": false,
+        "persistent-workspaces": {
+            "*": 4
+        }
+    },
+    "backlight": {
+        "device": "intel_backlight",
+        "rotate": 0,
+        "format": "{icon} {percent}%",
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        "on-scroll-up": "brightnessctl set 1%+",
+        "on-scroll-down": "brightnessctl set 1%-",
+        "min-length": 6
+    },
+    "network": {
+        "tooltip": true,
+        "format-wifi": " ",
+        "rotate": 0,
+        "format-ethernet": " 󰈀 ",
+        "tooltip-format": "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b>",
+        "format-linked": "󰈀 {ifname} (No IP)",
+        "format-disconnected": "󰖪 ",
+        "tooltip-format-disconnected": "Disconnected",
+        "format-alt": "<span foreground='#000000'> {bandwidthDownBytes}</span> <span foreground='#000000'> {bandwidthUpBytes}</span>",
+        "interval": 2,
+    },
+    "pulseaudio": {
+        "format": "{icon}  {volume}",
+        "rotate": 0,
+        "format-muted": " ",
+        "on-click": "pavucontrol -t 3",
+        "on-scroll-up": "pactl set-sink-volume 0 +1%",
+        "on-scroll-down": "pactl set-sink-volume 0 -1%",
+        "tooltip-format": "{icon} {desc} // {volume}%",
+        "scroll-step": 5,
+        "format-icons": {
+            "headphone": " ",
+            "hands-free": " ",
+            "headset": " c",
+            "phone": " ",
+            "portable": " ",
+            "car": " c",
+            "default": [
+                "",
+                "",
+                ""
+            ]
+        }
+    },
+    "tray": {
+        "show-passive-items": true,
+    },
+    "custom/keybindhint": {
+        "format": " ",
+        "rotate": 0,
+        "on-click": "~/.config/hypr/keybinds_hint.sh"
+    },
+    "custom/wallpaper": {
+        "format": " 󰸉 ",
+        "rotate": 0,
+        "on-click": "waypaper"
+    }
+}

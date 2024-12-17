@@ -1,0 +1,190 @@
+@import "../../.cache/wal/colors-waybar.css";
+
+* {
+  border: none;
+  border-radius: 0;
+  font-family: "Iosevka boldx";
+  font-size: 10px;
+  min-height: 0;
+  margin: 0px;
+}
+
+window#waybar {
+  /*background: #000000;*/
+  background: transparent;
+  color: @background;
+  /* color: #ffffff; */
+}
+
+#window {
+  color: #e4e4e4;
+  font-weight: bold;
+}
+
+#workspaces {
+  padding: 0 3px;
+  margin: 4 2px;
+}
+
+#workspaces button {
+  padding: 0 0px;
+  margin: 0.5px;
+  border-radius: 4px;
+  background: @color1;
+  color: @background;
+  /* color: #ff8700; */
+  /*
+	color: #00afd7;
+	color: #ffffff;
+	border: 1px solid #00afd7;
+	*/
+  border: 1px solid @color9;
+  font-weight: bold;
+}
+
+#workspaces button:hover {
+  box-shadow: inherit;
+  text-shadow: inherit;
+  background: @background;
+  color: @color1;
+}
+
+#workspaces button.active {
+  /* background: #e88939;
+	background: #00afd7;
+	color: #1b1d1e; */
+  background: @background;
+  color: @color1;
+}
+
+#workspaces button.urgent {
+  background: #af005f;
+  color: #1b1d1e;
+}
+
+#mode {
+  background: #af005f;
+  color: #1b1d1e;
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#network,
+#pulseaudio,
+#temperature,
+#custom-weather,
+#tray,
+#mode,
+#backlight,
+#custom-keybindhint,
+#custom-wofi,
+#custom-wallpaper,
+#custom-todo {
+  padding: 0 3px;
+  margin: 4 2px;
+  border-radius: 4px;
+}
+
+#pulseaudio,
+#backlight,
+#network,
+#custom-keybindhint,
+#custom-wallpaper,
+#custom-todo,
+#temperature,
+#cpu,
+#memory {
+  background: @color1;
+  color: @background;
+}
+
+
+#custom-weather {
+  background: @color1;
+  color: @background;
+}
+
+#clock {
+  background: @background;
+  color: @foreground;
+}
+
+#battery {
+  background: @background;
+  color: @foreground;
+}
+
+#battery icon {
+  color: red;
+}
+
+#battery.charging {
+  background: green;
+}
+
+@keyframes blink {
+  to {
+    background-color: #af005f;
+  }
+}
+
+#battery.warning {
+  background-color: #ff8700;
+  color: #1b1d1e;
+}
+
+#battery.critical {
+  color: white;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+#temperature.critical {
+  color: white;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+#custom-wofi {
+  background: @background;
+  color: #1793d0;
+}
+
+#cpu {}
+
+#memory.okay {
+  background-color: #ff8700;
+  color: #1b1d1e;
+}
+
+#memory.high {
+  background-color: red;
+  color: #1b1d1e;
+}
+
+#network.ethernet,
+#network.wifi,
+#network.linked {
+  background: lightgreen;
+  color: @background;
+}
+
+#network.disconnected,
+#network.disabled {
+  background: #f53c3c;
+}
+
+#pulseaudio.muted {
+  background: #f53c3c;
+}
+
+
+#tray {}
