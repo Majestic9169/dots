@@ -1,16 +1,17 @@
 #!/usr/bin/env bash
 
 # Set the path to the wallpapers directory
-wallpapersDir="$HOME/Wallpapers/animegirls/"
+THEME=arcane
+wallpapersDir="$HOME/Wallpapers/$THEME/"
 
 # Get a list of all image files in the wallpapers directory
 wallpapers=("$wallpapersDir"/*)
 
-# Check if the wallpapers array is empty
-# if [ ${#wallpapers[@]} -eq 0 ]; then
-#     # If the array is empty, refill it with the image files
-#     wallpapers=("$wallpapersDir"/*)
-# fi
+Check if the wallpapers array is empty
+if [ ${#wallpapers[@]} -eq 0 ]; then
+    # If the array is empty, refill it with the image files
+    wallpapers=("$wallpapersDir"/*)
+fi
 
 # Select a random wallpaper from the array
 wallpaperIndex=$(( RANDOM % ${#wallpapers[@]} ))
