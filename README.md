@@ -10,7 +10,7 @@
 - Shell: Fish (might switch to zsh soon, the non POSIX compliance is annoying at times)
 - Shell Promp: Starship
 - Text editor: Neovim
-- File Manager: superfile (TUI, but lacks a lot of features/customisations, might switch eventually)
+- File Manager: nnn
 - Program Menu or whatever it's called: Rofi
 
 My wallpapers can be found [here](https://github.com/Majestic9169/wallpapers) (there are a lot)
