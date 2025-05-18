@@ -23,4 +23,5 @@ slurp
 wl-clipboard
 wf-recorder
 vlc
+nnn
 mpv
