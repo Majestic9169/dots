@@ -1,8 +1,8 @@
 os-prober
 hyprland
-kitty
+alacritty
 github-cli
-htop
+btop
 waybar
 python-pywal
 brightnessctl
@@ -18,12 +18,9 @@ pipewire-jack
 wireplumber
 pavucontrol
 fzf
-ranger
-python-pillow
 grim
 slurp
 wl-clipboard
-jq
 wf-recorder
 vlc
 mpv

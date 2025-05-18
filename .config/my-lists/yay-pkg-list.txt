@@ -1,7 +1,8 @@
-vscodium-bin
 waypaper
 swww
 hyprpicker
 ttf-iosevka
 ttf-iosevka-term
 rate-mirrors
+superfile-bin
+pw-volume
