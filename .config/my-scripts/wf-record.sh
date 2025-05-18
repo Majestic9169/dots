@@ -10,7 +10,7 @@ notify-send -h string:wf-recorder:record -t 1000 "Recording in:" "<span color='#
 
 sleep 1
 
-notify-send -h string:wf-recorder:record -t 950 "Recording in:" "<span color='#90a4f4' font='26px'><i><b>1</b></i></span>"
+notify-send -h string:wCRITICAL: [dbus_cb_name_lost:1402] Cannot acquire 'org.freedesktop.Notifications': Name is acquired by 'dunst' with PID '6816'.f-recorder:record -t 950 "Recording in:" "<span color='#90a4f4' font='26px'><i><b>1</b></i></span>"
 
 sleep 1
 

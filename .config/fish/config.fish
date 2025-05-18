@@ -1,4 +1,5 @@
 if status is-interactive
+    set -x DEBUGINFOD_URLS "https://debuginfod.artixlinux.org"
     # Commands to run in interactive sessions can go here
     alias cfg="cd ~/.config/"
     alias scr="cd ~/.config/my-scripts/"
@@ -7,13 +8,27 @@ if status is-interactive
     alias sl="sl -e"
     alias mv="mv -iv"
     alias pip="pip --require-virtualenv"
-    alias btrfs="btrfs --log debug"
-    alias chal="cd ~/Public/ctfs/"
+    alias todo="nvim ~/.personal/TODO.md"
+    alias osync="rclone bisync ~/.personal/ remote:Obsidian --remove-empty-dirs -v"
+    alias vault="cd ~/.personal/"
+    alias pokefetch="~/.config/my-scripts/pokefetch.sh"
+    function fish_greeting
+    end
+    function update-all -d "update mirrors" 
+        set -x TMPFILE "$(mktemp)"
+        sudo true
+        rate-mirrors --save="$TMPFILE" artix \
+            && sudo mv /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.baka \
+            && sudo mv "$TMPFILE" /etc/pacman.d/mirrorlist \
+            && sudo paccache -rk3 \
+            && yay -Sc --aur --noconfirm \
+            && yay -Syyu --confirm
+    end
     function config -d "dotfile management"
         /usr/bin/git --git-dir="$HOME/.dotfiles/" --work-tree="$HOME" $argv
     end
-    function tt -d "timetable"
-        sxiv "/home/subzcuber/Pictures/imp/timetable-25s.png" -b -s f -f
+    function note -d "new obsidian note"
+        nvim ~/.personal/$argv[1].md
     end
     function fcd -d "fzf cd"
         cd "$(find ~/ -type d  | fzf +i --scheme=path)"
@@ -76,3 +91,6 @@ set QT_QPA_PLATFORM xcb
 # bun
 set --export BUN_INSTALL "$HOME/.bun"
 set --export PATH $BUN_INSTALL/bin $PATH
+
+# pywal
+cat ~/.cache/wal/sequences

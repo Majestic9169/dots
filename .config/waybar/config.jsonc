@@ -4,10 +4,11 @@
     "layer": "top",
     "position": "top",
     "mod": "dock",
-    "height": 31,
+    "height": 27,
     "exclusive": true,
     "passthrough": false,
     "gtk-layer-shell": true,
+    "include": "../../.cache/wal/colors-waybar.css",
     // positions generated based on config.ctl //
     "modules-left": [
         "custom/wofi",
@@ -19,7 +20,7 @@
     ],
     "modules-right": [
         "tray",
-        "pulseaudio",
+	    "custom/pipewire",
         "backlight",
         "custom/wallpaper",
         "custom/keybindhint",
@@ -27,7 +28,7 @@
         "memory",
         "temperature",
         "network",
-        "battery",
+        "battery"
     ],
     // sourced from modules based on config.ctl //
     "custom/wofi": {
@@ -170,18 +171,22 @@
         "format-disconnected": "󰖪 ",
         "tooltip-format-disconnected": "Disconnected",
         "format-alt": "<span foreground='#000000'> {bandwidthDownBytes}</span> <span foreground='#000000'> {bandwidthUpBytes}</span>",
-        "interval": 2,
+        "interval": 2
     },
-    "pulseaudio": {
-        "format": "{icon}  {volume}",
+    "custom/pipewire": {
+        "format": "{icon}  {percentage}",
+	"exec": "pw-volume status",
+	"return-type": "json",
+	"interval": "once",
+	"signal": 8,
         "rotate": 0,
-        "format-muted": " ",
-        "on-click": "pavucontrol -t 3",
-        "on-scroll-up": "pactl set-sink-volume 0 +1%",
-        "on-scroll-down": "pactl set-sink-volume 0 -1%",
-        "tooltip-format": "{icon} {desc} // {volume}%",
+        "on-click": "pw-volume mute toggle; pkill -15 waybar; waybar",
+        "on-scroll-up": "pw-volume change +1%",
+        "on-scroll-down": "pw-volume change -1%",
+        "tooltip-format": "{percentage} %",
         "scroll-step": 5,
         "format-icons": {
+	    "mute": " ",
             "headphone": " ",
             "hands-free": " ",
             "headset": " c",
@@ -196,7 +201,7 @@
         }
     },
     "tray": {
-        "show-passive-items": true,
+        "show-passive-items": true
     },
     "custom/keybindhint": {
         "format": " ",

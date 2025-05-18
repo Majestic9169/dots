@@ -5,9 +5,6 @@ github-cli
 htop
 waybar
 python-pywal
-hyprlock
-firefox
-lxappearance
 brightnessctl
 noto-fonts-cjk
 noto-fonts
@@ -19,12 +16,10 @@ pipewire-alsa
 pipewire-pulse
 pipewire-jack
 wireplumber
-helvum
 pavucontrol
 fzf
 ranger
 python-pillow
-rofi-wayland
 grim
 slurp
 wl-clipboard
@@ -32,4 +27,3 @@ jq
 wf-recorder
 vlc
 mpv
-pacman-contrib

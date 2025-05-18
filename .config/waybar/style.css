@@ -4,7 +4,7 @@
   border: none;
   border-radius: 0;
   font-family: "Iosevka boldx";
-  font-size: 10px;
+  font-size: 8px;
   min-height: 0;
   margin: 0px;
 }
@@ -32,12 +32,6 @@ window#waybar {
   border-radius: 4px;
   background: @color1;
   color: @background;
-  /* color: #ff8700; */
-  /*
-	color: #00afd7;
-	color: #ffffff;
-	border: 1px solid #00afd7;
-	*/
   border: 1px solid @color9;
   font-weight: bold;
 }
@@ -50,9 +44,6 @@ window#waybar {
 }
 
 #workspaces button.active {
-  /* background: #e88939;
-	background: #00afd7;
-	color: #1b1d1e; */
   background: @background;
   color: @color1;
 }
@@ -72,7 +63,7 @@ window#waybar {
 #cpu,
 #memory,
 #network,
-#pulseaudio,
+#custom-pipewire,
 #temperature,
 #custom-weather,
 #tray,
@@ -87,7 +78,7 @@ window#waybar {
   border-radius: 4px;
 }
 
-#pulseaudio,
+#custom-pipewire,
 #backlight,
 #network,
 #custom-keybindhint,
@@ -182,7 +173,7 @@ window#waybar {
   background: #f53c3c;
 }
 
-#pulseaudio.muted {
+#custom-pipewire.muted {
   background: #f53c3c;
 }
 
