@@ -1,10 +1,12 @@
 #!/usr/bin/env bash
 
-# billy'billys-agent-grub2-theme
+# crossgrub theme: https://github.com/krypciak/crossgrub
 
 cd ~/
-git clone https://gitlab.com/Drorago/billys-agent-grub2-theme.git
-sudo cp -r billys-agent-grub2-theme/ /usr/share/grub/themes/ 
+git clone https://github.com/krypciak/crossgrub
+sudo bash ./install crossgrub/install.sh
+echo "add the following line to your /etc/default/grub"
+echo "GRUB_THEME=/boot/grub/themes/crossgrub/theme.txt"
 sudo nvim /etc/default/grub 
 sudo grub-mkconfig -o /boot/grub/grub.cfg
-rm -rf billys-agent-grub2-theme/
+rm -rf crossgrub
