@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Set the path to the wallpapers directory
-THEME=master
+THEME=arcane
 wallpapersDir="$HOME/Wallpapers/$THEME/"
 
 # Get a list of all image files in the wallpapers directory
@@ -26,6 +26,8 @@ echo "[~] Selected Wallpaper is $selectedWallpaper"
 swww img "$selectedWallpaper" --transition-duration ${SWWW_TRANSITION_DURATION} -t ${SWWW_TRANSITION}
 wal -i $selectedWallpaper
 killall -SIGUSR2 waybar
+cp ~/.cache/wal/config ~/.config/cava/config
+pkill -USR2 cava
 
 # Remove the selected wallpaper from the array
 unset "wallpapers[$wallpaperIndex]"

@@ -1,6 +1,13 @@
 if status is-interactive
     set -x DEBUGINFOD_URLS "https://debuginfod.artixlinux.org"
     # Commands to run in interactive sessions can go here
+
+    # ==================================================
+    #
+    #                   ALIASES
+    #
+    # ==================================================
+    
     alias cfg="cd ~/.config/"
     alias scr="cd ~/.config/my-scripts/"
     alias lis="cd ~/.config/my-lists/"
@@ -11,10 +18,21 @@ if status is-interactive
     alias todo="nvim ~/.personal/TODO.md"
     alias osync="rclone bisync ~/.personal/ remote:Obsidian --remove-empty-dirs -v"
     alias vault="cd ~/.personal/"
-    alias pokefetch="~/.config/my-scripts/pokefetch.sh"
+
+    # ===================================================
+    #
+    #                   FUNCTIONS
+    #
+    # ===================================================
+
     function fish_greeting
     end
-    function update-all -d "update mirrors" 
+
+    function pokefetch -d "pokemon image in fastfetch"
+        ~/.config/my-scripts/pokefetch.sh
+    end
+
+    function update-all -d "update mirrors and all packages" 
         set -x TMPFILE "$(mktemp)"
         sudo true
         rate-mirrors --save="$TMPFILE" artix \
@@ -24,27 +42,35 @@ if status is-interactive
             && yay -Sc --aur --noconfirm \
             && yay -Syyu --confirm
     end
+
     function config -d "dotfile management"
         /usr/bin/git --git-dir="$HOME/.dotfiles/" --work-tree="$HOME" $argv
     end
+
     function note -d "new obsidian note"
         nvim ~/.personal/$argv[1].md
     end
+
     function fcd -d "fzf cd"
         cd "$(find ~/ -type d  | fzf +i --scheme=path)"
     end
+
     function fshare -d "gen link to share file"
         curl -F"file=@$(find $HOME -type f | fzf)" 0x0.st | wl-copy
     end
+
     function fopen -d "fzf xdg-open"
         xdg-open "$(find ~/ -type f  | fzf +i --scheme=path)"
     end
+
     function getpath -d "copy path" 
         find ~/ -type f  | fzf | sed 's/^.{2}//;s/ /\\\ /g' | tr -d '\n' | wl-copy
     end
+
     function reload -d "reload shell"
         source ~/.config/fish/**/*.fish
     end
+
     function build -d "compile given file"
         set input_file $argv[1]
         set output_file $argv[2]
@@ -63,10 +89,12 @@ if status is-interactive
             echo "Compilation failed"
         end
     end
+
     function btrh -d "btrfs help"
         set search $argv[1]
         btrfs --help | grep -i "$search" -A 1 -B 1 -n
     end
+
     starship init fish | source
 end
 

@@ -15,4 +15,4 @@ notify-send -h string:wCRITICAL: [dbus_cb_name_lost:1402] Cannot acquire 'org.fr
 sleep 1
 
 dateTime=$(date +%m-%d-%Y-%H:%M:%S)
-wf-recorder --bframes max_b_frames -f $HOME/Videos/$dateTime.mp4 
+wf-recorder --audio=alsa_output.pci-0000_08_00.6.analog-stereo.monitor --bframes max_b_frames -f $HOME/Videos/$dateTime.mp4 
