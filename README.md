@@ -55,8 +55,9 @@ Check out hyprland keybinds [here](./.config/my-lists/keybinds.md), that will de
 My wallpapers can be found [here](https://github.com/Majestic9169/wallpapers) (there are a lot)
 
 ![miles.png](./showcase/miles.png)
-![trapinch.png](./showcase/trapinch.png)
 ![arcane.gif](./showcase/arcane.gif)
+![trapinch.png](./showcase/trapinch.png)
+![tiling.gif](./showcase/tiling.gif)
 ![red.png](./showcase/redgirl.png)
 ![power](./showcase/power.png)
 
