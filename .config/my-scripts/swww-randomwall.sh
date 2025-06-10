@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Set the path to the wallpapers directory
-THEME=master
+THEME=animegirls
 wallpapersDir="$HOME/Wallpapers/$THEME/"
 
 # Get a list of all image files in the wallpapers directory

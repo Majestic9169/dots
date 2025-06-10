@@ -7,11 +7,10 @@ POKEMON_LIST=(
   "blaziken"
   "arceus"
   "oshawott"
-  "totodile"
-  "deoxys"
   "articuno"
   "pikachu"
-  "umbreon"
+  "darkrai"
+  "sylveon"
   "random"
 )
 # Change with your fetcher
