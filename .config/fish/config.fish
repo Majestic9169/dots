@@ -1,5 +1,6 @@
 if status is-interactive
     set -x DEBUGINFOD_URLS "https://debuginfod.artixlinux.org"
+
     # Commands to run in interactive sessions can go here
 
     # ==================================================
@@ -105,9 +106,6 @@ if not string match -q -- $PNPM_HOME $PATH
 end
 # pnpm end
 
-# wallpaper env
-set -g CURRENT_WALLPAPER "/home/subzcuber/Wallpapers/animegirls/ryo-btr.png"
-
 # ROS
 set QT_QPA_PLATFORM xcb
 
@@ -122,3 +120,19 @@ set --export PATH $BUN_INSTALL/bin $PATH
 
 # pywal
 cat ~/.cache/wal/sequences
+
+# login stuff, source /etc/profile and start user services
+if status is-login
+    if not set -q __sourced_profile
+        set -x __sourced_profile 1
+        exec bash -c "\
+            test -e /etc/profile && source /etc/profile
+            test -e $HOME/.bash_profile && source $HOME/.bash_profile
+            exec fish --login
+        "
+    end
+
+    runsvdir -P ~/.config/service/ &
+
+    set -e __sourced_profile
+end
