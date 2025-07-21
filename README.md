@@ -57,7 +57,8 @@ My wallpapers can be found [here](https://github.com/Majestic9169/wallpapers) (t
 ![miles.png](./showcase/miles.png)
 ![arcane.gif](./showcase/arcane.gif)
 ![trapinch.png](./showcase/trapinch.png)
-![tiling.gif](./showcase/tiling.gif)
 ![red.png](./showcase/redgirl.png)
+![eva-nvim.png](./showcase/eva-nvim.png)
+![tiling.gif](./showcase/tiling.gif)
 ![power](./showcase/power.png)
 
