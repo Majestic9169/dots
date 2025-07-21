@@ -14,7 +14,7 @@
 - [Fish](https://fishshell.com/) - Shell
 - [Pywal](https://github.com/dylanaraps/pywal) - Dynamic Colors
 - [Neovim](https://neovim.io/) - Text Editor with AstroVim configs
-- [NNN](https://github.com/jarun/nnn) - File Manager
+- [yazi](https://github.com/sxyazi/yazi) - File Manager
 - [Rofi(wayland fork)](https://github.com/lbonn/rofi) - App Launcher
 - [Grimblast](https://github.com/hyprwm/contrib#grimblast) and [swappy](https://github.com/jtheoof/swappy) - For taking and editing screenshots
 - [NetworkManager](https://wiki.archlinux.org/title/NetworkManager) and [nmtui](https://linuxcommandlibrary.com/man/nmtui) - Network stuff

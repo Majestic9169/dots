@@ -19,7 +19,6 @@
         // "custom/weather"
     ],
     "modules-right": [
-        "tray",
 	    "custom/pipewire",
         "backlight",
         "custom/wallpaper",
@@ -28,6 +27,7 @@
         "memory",
         "temperature",
         "network",
+        "tray",
         "battery"
     ],
     // sourced from modules based on config.ctl //
