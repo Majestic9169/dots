@@ -5,7 +5,7 @@
 [miscellaneous]
 
 path=/home/subzcuber/Music
-version=3.3.3
+version=3.4.0
 allowNotifications=0
 hideLogo=0
 hideHelp=0
@@ -32,6 +32,9 @@ saveRepeatShuffleSettings=1
 repeatState=0
 
 shuffleEnabled=1
+
+# Set the window title to the title of the currently playing track
+trackTitleAsWindowTitle=1
 
 
 [visualizer]
@@ -151,7 +154,7 @@ toggleShuffle=s
 seekBackward=a
 seekForward=d
 savePlaylist=x
-addToMainPlaylist=.
+addToFavoritesPlaylist=.
 updateLibrary=u
 moveSongUp=t
 moveSongDown=g

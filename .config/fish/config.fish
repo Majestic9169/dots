@@ -9,6 +9,7 @@ if status is-interactive
     #
     # ==================================================
     
+    alias ll="eza --header --group-directories-first --long --git --icons"
     alias cfg="cd ~/.config/"
     alias scr="cd ~/.config/my-scripts/"
     alias lis="cd ~/.config/my-lists/"

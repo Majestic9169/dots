@@ -1,62 +1,86 @@
-#  Apps
+# Keybinds
 
- Terminal    + ENTER
-󰈹 Firefox     + A
-              + SHIFT + A
-󰍜 Rofi dmenu 
- VSCodium    + D          #disabled because was annoying
- Okular      + K 
- Obsidian     + N
- Waybar      + SHIFT + X
- Spotube     + E
+##  Apps
 
-#  Window Management
+| Action     | Keys                 | Comments                        |
+|------------|----------------------|--------------------------------|
+|  Terminal |  + ENTER           |                                |
+| 󰈹 Browser  |  + A               |                                |
+|            |  + SHIFT + A       | private window                 |
+| 󰍜 Rofi dmenu |                   |  toggle rofi                  |
+|  PDF Reader   |  + K               | sioyek               |
+|  Obsidian |  + N               |                                |
+|  Waybar   |  + SHIFT + X       | toggle bar                        |
 
-󰖭 kill          + Q
-󰉧 float         + V
- fullscreen    + F
-                + SHIFT + F
- toggle split  + J
- toggle group  + C
- cycle group  ALT + TAB
-               ALT + SHIFT + TAB
+---
 
-# 󰪫 System Utility
+##  Window Management
 
-⏻ Poweroff         + ALT + END
-󰜉 Reboot           + ALT + HOME
-󰩈 Exit Hyprland    + M
- Lock              + L
+| Action          | Keys               | Comments |
+|-----------------|--------------------|----------|
+| 󰖭 Kill          |  + Q             |          |
+| 󰉧 Float         |  + V             |          |
+|  Fullscreen     |  + F             |          |
+|                 |  + SHIFT + F     | fake fullscreen   |
+|  Toggle Split  |  + J             |          |
+|  Toggle Group  |  + C             |          |
+|  Cycle Group   | ALT + TAB         | Next     |
+|                 | ALT + SHIFT + TAB | Previous |
 
-# 󰸉 Wallpapers
+---
 
- Random Wallpaper    + X
- toggle opaque       + Z   #feature removed in new Hyprland update
+## 󰪫 System Utility
 
-#  Volume and Media
+| Action          | Keys             | Comments |
+|-----------------|------------------|----------|
+| ⏻ Poweroff      |  + ALT + END   |   doesnt work with runit|
+| 󰜉 Reboot        |  + ALT + HOME  | doesnt work with runit|
+| 󰩈 Exit Hyprland |  + M           |          |
+|  Lock          |  + L           |     needs hyprlock     |
 
- Lower Volume        f6
- Raise Volume        f7
- Mute                f8
- Toggle Play/Pause   f12
-󰙢 Next                f10
-󰙤 Previous            f9
+---
 
-# 󰃠 Brightness
+## 󰸉 Wallpapers
 
-󰃚 Increase brightness  F10
-󰃜 Lower brightness     F9
+| Action             | Keys     | Comments               |
+|--------------------|----------|------------------------|
+|  Random Wallpaper |  + X   |                        |
+| 󰋫 Select Wallpaper |  + T   | might need to long press a little |
 
-# 󰹑 Screen Recording and Screenshots
+---
 
- Copy Area            INSERT
- Save Area            SHIFT + INSERT
- Copy Active Window   ALT + P
-󰆓 Save Active Window   ALT + SHIFT + P
- Copy Screen          PRT SC
- Save Screen          SHIFT + PRT SC
- Screen Record          + O
-                         + SHIFT + O
-󰑋 Record Part of Screen    + U
+##  Volume and Media
 
+| Action              | Keys | Comments |
+|---------------------|------|----------|
+|  Lower Volume      | media key   |          |
+|  Raise Volume      | media key   |          |
+|  Mute              | media key   |          |
+|  Play/Pause Toggle | F12  |          |
+| 󰙢 Next             | F10  | Track →  |
+| 󰙤 Previous         | F9   | Track ←  |
 
+---
+
+## 󰃠 Brightness
+
+| Action                | Keys | Comments |
+|-----------------------|------|----------|
+| 󰃚 Increase Brightness | brightness key  |          |
+| 󰃜 Lower Brightness    | brightness key   |  nto sure if these work |
+
+---
+
+## 󰹑 Screen Recording and Screenshots
+
+| Action                   | Keys            | Comments |
+|--------------------------|-----------------|----------|
+|  Copy Area              | INSERT          |          |
+|  Save Area              | SHIFT + INSERT  |          |
+|  Copy Active Window     | ALT + P         |          |
+| 󰆓 Save Active Window     | ALT + SHIFT + P |          |
+|  Copy Screen            | PRT SC          |          |
+|  Save Screen            | SHIFT + PRT SC  |          |
+|  Screen Record          |  + O           |  start   |
+|                          |  + SHIFT + O   | stop     |
+| 󰑋 Record Part of Screen  |  + U           | check above to stop |
